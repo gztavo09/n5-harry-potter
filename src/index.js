@@ -1,15 +1,26 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './App.jsx';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+
+window.renderHp = (containerId, history) => {
+  ReactDOM.render(
+    <App history={history} />,
+    document.getElementById(containerId),
+  );
+};
+
+window.unmountHp = containerId => {
+  ReactDOM.unmountComponentAtNode(document.getElementById(containerId));
+};
+
+if (!document.getElementById('Hp-container')) {
+  ReactDOM.render(<App />, document.getElementById('root')); 
+}
+// 
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
