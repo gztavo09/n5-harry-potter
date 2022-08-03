@@ -17,7 +17,7 @@ window.unmountHp = containerId => {
 };
 
 if (!document.getElementById('Hp-container')) {
-  ReactDOM.render(<App />, document.getElementById('root')); 
+  ReactDOM.render(<App />, document.getElementById('root-hp')); 
 }
 // 
 
